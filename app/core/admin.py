@@ -3,7 +3,7 @@ Django admin customization.
 """
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.utils.translation import gettext_lazy _
+from django.utils.translation import gettext_lazy as _
 
 from core import models
 
@@ -28,7 +28,7 @@ class UserAdmin(BaseUserAdmin):
     )
     readonly_fields = ['last_login']
     add_fieldsets = (
-        (None, (
+        (None, {
             'classes': ('wide',),
             'fields': (
                 'email',
@@ -39,7 +39,7 @@ class UserAdmin(BaseUserAdmin):
                 'is_staff',
                 'is_superuser',
             )
-        )),
+        }),
     )
 
 admin.site.register(models.User, UserAdmin)
