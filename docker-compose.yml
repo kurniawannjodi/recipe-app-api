@@ -31,9 +31,7 @@ services:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASS=changeme
-      - POSTGRES_PORT=5432
-    ports:
-      - "5432:5432"
+
 
 volumes:
   dev-db-data:

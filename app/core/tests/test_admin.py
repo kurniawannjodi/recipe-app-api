@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.test import Client
 
 
-class AdminSitetests(TestCase):
+class AdminSiteTests(TestCase):
     """Tests for django admin"""
 
     def setUp(self):
@@ -21,7 +21,7 @@ class AdminSitetests(TestCase):
         self.user = get_user_model().objects.create_user(
             email='user@example.com',
             password='testpass123',
-            name='Test user',
+            name='Test User',
         )
 
     def test_users_lists(self):
