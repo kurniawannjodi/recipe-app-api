@@ -1,7 +1,7 @@
 """
 Views for the user API.
 """
-from rest_framework import generics, authentications, permissions
+from rest_framework import generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 
@@ -22,7 +22,7 @@ class CreateTokenView(ObtainAuthToken):
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 
-class ManageUserView(generics.RetieveUpdateAPIView):
+class ManageUserView(generics.RetrieveUpdateAPIView):
     """Manage the authenticated user."""
     serializer_class = UserSerializer
     authentication_classes = [authentication.TokenAuthentication]
