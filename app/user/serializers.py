@@ -3,7 +3,7 @@ Serializers for the user API view
 """
 from django.contrib.auth import (
     get_user_model,
-    authenticate
+    authenticate,
 )
 from django.utils.translation import gettext as _
 from rest_framework import serializers
@@ -46,7 +46,7 @@ class AuthTokenSerializer(serializers.Serializer):
         email = attrs.get('email')
         password = attrs.get('password')
         user = authenticate(
-            request=self.contect.get('request'),
+            request=self.context.get('request'),
             username=email,
             password=password,
         )
